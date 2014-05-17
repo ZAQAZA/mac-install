@@ -237,7 +237,7 @@ Generate ssh keys:
 ## Dotvim
 
     cd ~
-    git clone https://github.com/astrails/dotvim.git .vim
+    git clone git@github.com:ofridagan/dotvim.git .vim
     ln -sfn .vim/vimrc .vimrc
 
     cd .vim
