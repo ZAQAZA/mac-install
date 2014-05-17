@@ -1,30 +1,16 @@
 
 # Installing Mac
 
-## What and Why
-
-This is a step by step guide which was written by me for myself mostly, with
-the intent to use and update it whenever I install a new mac.
-
-    Note: Those instructions were last applied on a fresh Mountain Lion MacBook Pro.
-
-<a name=top></a>
 ## Contents
 
 * [AppStore](#appstore)
 * [3rd party](#3rdparty)
-* [Keychains](#keychains)
-* [Preview signatures](#preview)
-* [iTunes Music](#itunes)
-* [iPhoto Pictures](#iphoto)
-* [Skype history transfer](#skype)
-* [MySQL](#mysql)
 * [Copy Files](#files)
 * [Preferences](#preferences)
-* [All Descktops Apps](#alldesktopapps)
+* [All Desktops Apps](#alldesktopapps)
+* [Command-Line Tools](#commandlinetools)
 * [Homebrew](#homebrew)
 * [/etc git](#etc)
-* [Postfix](#postfix)
 * [ZSH](#zsh)
 * [Fonts](#fonts)
 * [Dot files](#dotfiles)
@@ -34,11 +20,8 @@ the intent to use and update it whenever I install a new mac.
 * [RVM](#rvm)
 * [Heroku](#heroku)
 * [Nodejs](#nodejs)
-* [POW](#pow)
-* [Backblaze](#backblaze)
-* [ScanSnap](#scansnap)
+* [MySQL](#mysql)
 
-* [Copyright](#copy)
 
 
 <a name=appstore></a>
@@ -46,150 +29,32 @@ the intent to use and update it whenever I install a new mac.
 
 Login into the AppStore, go to "Purchases" and download all relevant apps.
 
-In particular make sure to install Xcode.
-
 <a name=3rdparty></a>
 ## 3rd party
 
-
-> NOTE: some apps that are not "properly" signed will not start unless you
-> change Gatekeeper preferences. There is a *better* workaround though. Right
-> click and select 'Open', this time you will have an additional optin to open
-> it regardless of the Gatekeeper settings.
-
 * [Dropbox](https://www.dropbox.com)
-* [1Password](https://agilebits.com/onepassword)
 
-  > IMPORTANT: Make sure Dropbox finished sync before you open your 1password keychain!
+* [Disk Inventory X](http://www.derlien.com/)
+
+* [FireFox](http://www.firefox.com/)
 
 * [Google Chrome](http://www.google.com/chrome/)
 
-  sign into your gmail account to sync prefs
-  (you will need to create a new application specific password if you use 2-phase auth.)
+  sign into your gmail account to sync prefs.
 
   visit [http://www.google.com/ncr](http://www.google.com/ncr) in every browser
   you use so that Google will stop redirecting to the stupid local site.
 
-* [Google Drive](https://drive.google.com/start)
-* [Skype](http://skype.com)
-* [LaunchBar 5](http://www.obdev.at/products/launchbar/index.html)
 * [iTerm2](http://www.iterm2.com)
 
   in Settings/Terminal set 'Unlimited scrollback'
-* [GitX](http://gitx.laullon.com)
 
-  `Right-click -> open` to open it for the first time (its not signed)
-
-  After that go to menu `GitX/Enable Terminal Usage...` to enable terminal `gitx` command.
-
-* [GrowlNotify](http://growl.info/downloads)
-* [CCMenu](http://ccmenu.sourceforge.net)
-* [Adobe Air](http://get.adobe.com/air/)
-* [HipChat](https://www.hipchat.com)
-* [AppTrap](http://onnati.net/apptrap/)
-* [Postgress.app](http://postgresapp.com)
-
-  To create postgres user without a password like in 'regular' postgres installation:
-
-        createuser --no-password -h localhost postgres
-        echo /Applications/Postgres.app/Contents/MacOS/bin | sudo tee /etc/paths.d/postgres
 * [SequelPro](http://www.sequelpro.com)
 * [Transmission](http://www.transmissionbt.com)
 * [VLC](http://www.videolan.org/)
-* [Things](http://culturedcode.com/things/)
 
-  configure 'ctrl-alt-cmd-n' as quick entry with autofill
-
-* [Stanza](http://www.lexcycle.com)
-
-  > Note: site seems to be down. copy from old computer's Applications folder
-  > instead
-
-* [Calibre](http://calibre-ebook.com)
-
-  Choose ~/Dropbox/books as the library location
-
-* [AppFresh](http://metaquark.de/appfresh/mac)
-
+* [Evernote](http://evernote.com/)
 * [Evernote Web Clipper](https://evernote.com/webclipper/)
-
-  Install Evernote from App Store first.
-
-* MacUpdate bundle
-
-  From the MacUpdate bundle (stored on s3) install ScreenFlow, KeyCue, Jaksta
-  (licenses are in 1Password)
-
-* [Shortcat](http://shortcatapp.com)
-
-* [Flip4Mac](http://www.telestream.net/flip4mac/overview.htm)
-
-[top](#top)<a name=keychains></a>
-## Keychains
-
-Copy files from `~/Library/Keychains/`. rename them with some common prefix
-like name of the old computer.
-
-[top](#top)<a name=preview></a>
-## Preview signatures
-
- Copy
- `~/Library/Containers/com.apple.Preview/Data/Library/Preferences/com.apple.Preview.signatures.plist`
- from the old computer.
-
- The keychains from the previous step should let you open it.
-
-[top](#top)<a name=itunes></a>
-## iTunes Music
-
-* quit iTunes on the old computer.
-* open home directory in Finder
-* right click on the Music folder and 'compress' it
-* transfer it to the new computer.
-* unpack into some temp folder
-* remove the **inside content** of your ~/Music folder
-* move the content of the Music folder from the old computer into ~/Music
-* in case your music library was on an external drive - make sure the drive is mounted
-* start iTunes
-
-[top](#top)<a name=iphoto></a>
-## iPhoto Pictures
-
-* simply copy the `~/Pictures/iPhoto Library` to the new computer
-
-[top](#top)<a name=skype></a>
-## Skype history transfer
-
-* make sure you have the same version of Skype on both old and new computers
-* quit Skype on both computers
-* create archive of your skype id directory on the old computer, transfer it
-  and open it at the same place at the new computer. The path is:
-  
-        ~/Library/Application Support/Skype/YOUR_SKYPE_ID
-
-[top](#top)<a name=mysql></a>
-## MySQL
-
-* Download 64bit Community Server DMG archive from [MySQL](http://mysql.com).
-* Mount it
-* install 3 components:
-  * mysql
-  * MySQL.prefpane
-  * MySQLStartupItem
-* setup paths:
-
-        echo /usr/local/mysql/bin | sudo tee /etc/paths.d/mysql
-        echo /usr/local/mysql/man | sudo tee /etc/manpaths.d/mysql
-
-### Library not loaded: libmysqlclient.18.dylib
-
-If you get this error the magic incantation to fix it is this:
-
-    sudo install_name_tool -change libmysqlclient.18.dylib /usr/local/mysql/lib/libmysqlclient.18.dylib /usr/local/rvm/gems/ruby-1.9.3-p286-falcon/gems/mysql2-0.2.13/lib/mysql2/mysql2.bundle
-
-> NOTE: you need to use your real mysql2.bundle path. to find it out do:
-
-    gem which mysql2
 
 [top](#top)<a name=files></a>
 ## Copy Files
@@ -211,8 +76,14 @@ Copy the following files over:
 Go to system preferences and adjust the following:
 
 * Dock
-
-  check "Automatically hide and show the Dock"
+  * check "Automatically hide and show the Dock"
+  * add spaces:
+  
+  	defaults write **com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}'** to add a space 
+  	
+  	then
+  	
+  	**killall Dock** to restart dock
 
 * Mission Control
 
@@ -243,28 +114,6 @@ Go to system preferences and adjust the following:
 
   turn on Firewall
 
-* Keyboard
-
-  in "Modifier Keys" popup switch "Caps Lock" to "Control"
-
-  * Keyboard Shortcuts:
-
-    * turn off "Show Spotlight Window" in spotlight group and
-    * turn on "Select next source in Input menu" in the "Keyboard & Text" group.
-    * turn on "Switch to Desktop .." in "Mission Control"
-
-    * turn on "All controls" for full keyboard access at the bottom of the
-      dialog.
-
-
-* Trackpad
-
-  check "Tap to Click"
-
-* Mail, Contacts & Calendars
-
-  Setup GMail account
-
 * Sharing
 
   Choose computer name
@@ -274,31 +123,24 @@ Go to system preferences and adjust the following:
   Enable dragging with Drag Lock on "Mouse & Trackpad/Trackpad Options"
 
 [top](#top)<a name=alldesktopapps></a>
-## All Descktops Apps
+## All Desktops Apps
 
-Change the following apps to be on all descktops:
+Change the following apps to be on all desktops:
+	
+	(right click on the dock options->all desktops. need to be two desktops for the option to show)
 
 * Preferences
-* iTunes
-* Contacts
-* Calendar
-* Reminders
-* Skype
-* HipChat
-* 1Password
 * Activity Monitor
 
-[top](#top)<a name=homebrew></a>
+[top](#top)<a name=commandlinetools></a>
+## Command-Line Tools
+	xcode-select --install
+
 ## Homebrew
 
-* Install Xcode command line tools from Xcode Preferences' Downloads tab.
-* Install [Xquartz](http://xquartz.macosforge.org/) of at least version 2.7.2
-  > NOTE: VERY important to install Xquartz before Homebrew.
 * Install [Homebrew](http://mxcl.github.com/homebrew/).
-* brew install macvim git wget imagemagick aria2 dos2unix watch tree pstree
+* brew install macvim git wget imagemagick dos2unix watch tree pstree
 * brew install tmux mtr iftop htop-osx gpg2 ctags
-* brew install erlang
-* brew install clojure clojure-contrib leiningen
 * brew install md5deep ack s3cmd unrar
 * brew install tig
 
@@ -312,74 +154,12 @@ Change the following apps to be on all descktops:
     git add .
     git commit -m initial
 
-[top](#top)<a name=postfix></a>
-## Postfix
-
-> UPDATE: I just installed a new Air laptop and it had the directories in the
-> main.cf file pointing to the old location, so there was no need to do any of
-> this... To check do `grep data_directory /etc/postfix/main.cf`. IF it points
-> to /Library/... then you might need to do the fixes below.
-
-If you upgraded from Lion your Postfix config is most probably broken.
-The upgrade changes /etc/postfix/main.cf to point to a new set of postfix
-directories but leaves the old directories at their old place.
-
-> Note: I expect ML upgrade process to be soon fixed to handle this so at some
-> point in time those steps should become unnecessary
-
-to verify the new directory locations:
-
-    ls /Library/Server/Mail/Data/spool
-    ls /Library/Server/Mail/Data/mta
-
-check the old directory locations:
-
-    ls /var/spool/postfix
-    ls /var/lib/postfix
-
-Lets move the directories to their new place (if needed):
-
-    sudo mkdir -p /Library/Server/Mail/Data
-    sudo mv /var/spool/postfix /Library/Server/Mail/Data/spool
-    sudo mv /var/lib/postfix /Library/Server/Mail/Data/mta
-
-Start the Postfix daemon
-
-    sudo postfix set-permissions
-    sudo postfix start
-
-`set-permissions` might complain about missing man pages. the problem is that
-the new `postfix-files` file has the man pages with `.gz` extension, but they
-were not compressed during the upgrade.
-
-To fix:
-
-    d=/usr/share/man;grep manpage_directory /etc/postfix/postfix-files | cut -d/ -f2- | cut -d: -f1 | grep '\.gz$' | while read f; do echo $f;[ ! -e "$d/$f" -a -e "$d/${f%.gz}" ] && sudo gzip -9v "$d/${f%.gz}";done
-    sudo postfix set-permissions
-
-Then you also might have the following problem:
-
-> postfix/postfix-script: warning: group or other writable: /Library/Server/Mail/Data/mta
-
-To fix edit /etc/postfix/postfix-files:
-
-    sudo vim /etc/postfix/postfix-files
-
-find the line
-
-    $data_directory:d:$mail_owner:-:770:uc
-
-and change 770 to 750. then set-persmissions again and verify:
-
-    sudo postfix set-permissions
-    sudo postfix check
-
 [top](#top)<a name=zsh></a>
 ## ZSH
 
     brew install zsh zsh-completions
 
-    git clone git@github.com:astrails/dotzsh .zsh
+    git clone http://github.com/astrails/dotzsh .zsh
     ln -sfn .zsh/zshrc .zshrc
 
     echo /usr/local/bin/zsh | sudo tee -a /etc/shells
@@ -396,18 +176,14 @@ and change 770 to 750. then set-persmissions again and verify:
 - wget https://gist.github.com/raw/1595572/Inconsolata-dz-Powerline.otf -O /Library/Fonts/Inconsolata-dz-Powerline.otf
 - wget https://gist.github.com/raw/1595572/Menlo-Powerline.otf -O /Library/Fonts/Menlo-Powerline.otf
 - wget https://gist.github.com/raw/1595572/mensch-Powerline.otf -O /Library/Fonts/mensch-Powerline.otf
+- vim fonts (from my gmail)
 
 
 [top](#top)<a name=dotfiles></a>
 ## Dot files
 
-Fork http://github.com/astrails/dotfiles and make changes to suite your needs.
-You must edit user-gitconfig.
-
-Then:
-
     cd ~
-    git clone YOUR_FORK_LOCATION .dot
+    git clone https://github.com/ofridagan/dotfiles .dot
     cd .dot
     make install
 
@@ -504,54 +280,30 @@ Verify by running
 
 [top](#top)<a name=nodejs></a>
 ## Nodejs
+	brew install node
+	
+[top](#top)<a name=mysql></a>
+## MySQL
 
-We will use NVM to install node:
+* Download 64bit Community Server DMG archive from [MySQL](http://mysql.com).
+* Mount it
+* install 3 components:
+  * mysql
+  * MySQL.prefpane
+  * MySQLStartupItem
+* setup paths:
 
-    cd ~
-    git clone git://github.com/creationix/nvm.git .nvm
+        echo /usr/local/mysql/bin | sudo tee /etc/paths.d/mysql
+        echo /usr/local/mysql/man | sudo tee /etc/manpaths.d/mysql
 
-Open new terminal so that nvm config will load (handled by dotfiles/zsh-local).
+### Library not loaded: libmysqlclient.18.dylib
 
-Then:
+If you get this error the magic incantation to fix it is this:
 
-    nvm install v0.8.6
-    nvm alias default v0.8.6
+    sudo install_name_tool -change libmysqlclient.18.dylib /usr/local/mysql/lib/libmysqlclient.18.dylib /usr/local/rvm/gems/ruby-1.9.3-p286-falcon/gems/mysql2-0.2.13/lib/mysql2/mysql2.bundle
 
-Open new terminal again and verify that `node` works.
+> NOTE: you need to use your real mysql2.bundle path. to find it out do:
 
-Now we need to install a couple of npm modules:
+    gem which mysql2
 
-    npm install -g coffee-script
-    npm install -g js2coffee
-
-[top](#top)<a name=pow></a>
-## POW
-
-    curl get.pow.cx | sh
-
-[top](#top)<a name=backblaze></a>
-## Backblaze
-
-Download and install Backblaze from [backblaze.com](http://backblaze.com/).
-
-Start backblaze.
-
-Select Transfer Backup State from the Backblaze Menu Icon and follow the steps.
-
-### Time Machine
-
-Its important to add backblaze directory to timemachine exclusions list
-
-    sudo tmutil addexclusion -p /Library/Backblaze.bzpkg
-
-[top](#top)<a name=scansnap></a>
-## ScanSnap
-
-- Download [ScanSnap Manager](http://scansnap.fujitsu.com/g-support/en/)
-  
-  Need to install original software and latest update.
-
-[top](#top)<a name=copy></a>
-## Copyright
-
-© 2012 Vitaly Kushner, Astrails Ltd.
+[top](#top)
