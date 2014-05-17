@@ -159,7 +159,7 @@ Change the following apps to be on all desktops:
 
     brew install zsh zsh-completions
 
-    git clone http://github.com/astrails/dotzsh .zsh
+    git clone https://github.com/ofridagan/dotzsh.git .zsh
     ln -sfn .zsh/zshrc .zshrc
 
     echo /usr/local/bin/zsh | sudo tee -a /etc/shells
@@ -307,3 +307,6 @@ If you get this error the magic incantation to fix it is this:
     gem which mysql2
 
 [top](#top)
+## Copyright
+
+© 2012 Vitaly Kushner, Astrails Ltd.
