@@ -8,7 +8,7 @@
 * [Copy Files](#files)
 * [Preferences](#preferences)
 * [All Desktops Apps](#alldesktopapps)
-* [Command-Line Tools](#commandlinetools)
+* [Xcode](#commandlinetools)
 * [Homebrew](#homebrew)
 * [/etc git](#etc)
 * [ZSH](#zsh)
@@ -133,8 +133,8 @@ Change the following apps to be on all desktops:
 * Activity Monitor
 
 [top](#top)<a name=commandlinetools></a>
-## Command-Line Tools
-	xcode-select --install
+## XCODE
+install xcode
 
 ## Homebrew
 
