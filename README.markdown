@@ -243,6 +243,31 @@ Generate ssh keys:
     cd .vim
     make install
 
+This is my ~/.vimrc.after
+
+	set guifont=Sauce\ Code\ Powerline\ Light:h14
+	let g:Powerline_symbols = 'fancy'
+
+	set cul
+	set foldcolumn=4
+
+	if has('gui_running')
+	  set background=dark
+	else
+	  set background=dark
+	end
+	colorscheme solarized
+
+	let g:nerdtree_tabs_open_on_gui_startup = 0
+
+	map ` :Switch<cr>
+	nnoremap <leader>W :retab<cr>:%s/\s\+$//<cr>:let @/=''<cr>
+
+	set shiftwidth=2
+
+	" defines that a .ctrlp (empty) file marks the root of searches for ctlp (in
+	" addition to .git folder)
+	let g:ctrlp_root_markers = ['.xxx']
 
 [top](#top)<a name=rvm></a>
 ## RVM
