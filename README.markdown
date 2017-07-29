@@ -54,6 +54,7 @@ Login into the AppStore, go to "Purchases" and download all relevant apps.
 * [VLC](http://www.videolan.org/)
 
 * [simplenote](https://simplenote.com)
+* [dashnote](http://dashnote.resen.co)
 
 [top](#top)<a name=files></a>
 ## Copy Files
