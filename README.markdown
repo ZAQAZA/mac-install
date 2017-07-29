@@ -53,7 +53,7 @@ Login into the AppStore, go to "Purchases" and download all relevant apps.
 * [Transmission](http://www.transmissionbt.com)
 * [VLC](http://www.videolan.org/)
 
-* simplenote (https://simplenote.com)
+* [simplenote](https://simplenote.com)
 
 [top](#top)<a name=files></a>
 ## Copy Files
