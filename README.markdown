@@ -53,8 +53,7 @@ Login into the AppStore, go to "Purchases" and download all relevant apps.
 * [Transmission](http://www.transmissionbt.com)
 * [VLC](http://www.videolan.org/)
 
-* [Evernote](http://evernote.com/)
-* [Evernote Web Clipper](https://evernote.com/webclipper/)
+* simplenote (https://simplenote.com)
 
 [top](#top)<a name=files></a>
 ## Copy Files
