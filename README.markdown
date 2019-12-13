@@ -306,6 +306,8 @@ Verify by running
 [top](#top)<a name=nodejs></a>
 ## Nodejs
 	brew install node
+or
+	brew install nvm
 	
 [top](#top)<a name=mysql></a>
 ## MySQL
